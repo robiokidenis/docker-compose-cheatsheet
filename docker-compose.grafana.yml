@@ -5,9 +5,11 @@ services:
     image: grafana/grafana:latest
     network_mode: "bridge"
     container_name: grafana8
-	# user: "1000" # needs to be `id -u` // alternatively chown the grafana/data dir to 472:472
+	
     volumes:
-      - /home/huupv/docker/grafana/data:/var/lib/grafana
+      - ./data:/var/lib/grafana
     ports:
       - "3000:3000"
     restart: always
+    
+    ##run # id -u 1001 && sudo chown 472:472 data/
