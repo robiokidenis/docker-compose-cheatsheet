@@ -1,0 +1,21 @@
+version: "3.6"
+services:
+  adguard:
+    image: adguard/adguardhome:latest
+    restart: unless-stopped
+    # volumes:
+    #   - ./my/own/workdir:/opt/adguardhome/work\
+    #   - ./my/own/confdir:/opt/adguardhome/conf\
+    ports:
+     - "53:53"
+     - "67:67"
+     - "68:68"
+     - "180:80"
+     - "1443:443"
+     - "3000:3000"
+     - "853:853"
+     - "784:784"
+     - "8853:8853"
+     - "5433:5433"
+# volumes:
+#   backups:
